@@ -1,4 +1,4 @@
-FROM cargo.caicloudprivatetest.com/caicloud/alpine:3.7
+FROM cargo.caicloud.xyz/library/alpine:3.7
 
 LABEL maintainer="Jim Zhang <jim.zhang@caicloud.io>"
 

@@ -163,7 +163,11 @@ containers:
   value: {{ .value | quote }}
   {{- with .from }}
   valueFrom:
-    {{ if eq .type  "Config" -}}
+    {{ if eq .type "ResourceFieldRef" -}}
+    resourceFieldRef:
+      resource: {{ .resource | quote }}
+    {{ else -}}
+    {{ if eq .type "Config" -}}
     configMapKeyRef:
     {{- else }}
     secretKeyRef:
@@ -171,6 +175,7 @@ containers:
       name: {{ .name | quote }}
       key: {{ .key | quote }}
       optional: {{ .optional }}
+  {{- end -}}
   {{- end -}}
 {{- end -}}
 {{- end -}}

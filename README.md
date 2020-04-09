@@ -327,6 +327,7 @@ env:                                   # env
   from:                                # value 和 from 只能二选其一
     type: string("Config")             # 来源类型
     name: string                       # Config 或 Secret 的名称
+    resource: string                   # type 为 ResourceFieldRef 时用的值
     key: string                        # data 的 key
     optional: bool(false)              # 是否可选，即目标不存在也就忽略而不是报错
 resources:                             # 资源限制
